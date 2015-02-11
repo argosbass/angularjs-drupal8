@@ -1,0 +1,122 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li class="active">Create</li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row">
+        <div class="space-6"></div>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div id="login-box" class="login-box visible widget-box no-border">
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <h4 class="header blue lighter bigger">
+                            Create
+                        </h4>
+                        <br/>
+                        <form name="createForm" class="form-horizontal" role="form">
+
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="first_name">First Name</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" name = "first_name" placeholder="First Name" ng-model="customer.first_name" />
+                                </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="last_name">Last Name</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input type="text" class="form-control" name = "last_name"  placeholder="Last Name" ng-model="customer.last_name" />
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="telephone">Telephone</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input type="text" class="form-control"  name="telephone" placeholder="Telephone" ng-model="customer.telephone" />
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="fee">Fee</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input type="text" class="form-control" name="fee" placeholder="Fee" ng-model="customer.fee" />
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="payments">Payments</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input type="text" class="form-control" name="payments" placeholder="Payments" ng-model="customer.payments" />
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="total_payments">Total Payments</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input type="text" class="form-control" name="total_payments" placeholder="Total Payments" ng-model="customer.total_payments" />
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="email">Email</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" name = "email" placeholder="Email" ng-model="customer.email" required/>
+                                <span ng-show="createForm.email.$error.email" class="help-inline">Email is not valid</span>
+                                <small class="errorMessage" data-ng-show="createForm.email.$dirty && createForm.email.$invalid"> Enter Email.</small>
+                            </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-5 control-label no-padding-right" for="email2">Confirm Email</label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" name="email2" placeholder="Email Again" ng-model="customer.email2" email-match="customer.email" required/>                                
+                                
+                                <span ng-show="createForm.email2.$error.email" class="help-inline">Email is not valid</span>
+
+                                <small class="errorMessage" data-ng-show="createForm.email2.$dirty && createForm.email2.$error.required"> Enter email again.</small>
+
+                                <small class="errorMessage" data-ng-show="createForm.email2.$dirty && createForm.email2.$error.emailNoMatch && !createForm.email2.$error.required"> Email do not match.</small>
+
+                            </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <span class="lbl col-sm-5"> </span>
+                                <div class="col-sm-7">
+                                    <button type="submit" class="width-35 pull-right btn btn-sm btn-primary" ng-click="doCreate(customer)" data-ng-disabled="createForm.$invalid">
+                                        Create Customer
+                                    </button>
+                                </div>
+                            </div>
+                            </fieldset>
+                         </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- /.page-content -->

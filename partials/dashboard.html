@@ -1,0 +1,88 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a href="#">Inicio</a>
+        </li>
+        <li class="active">Home</li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row">
+        <div class="space-6"></div>
+        <div class="col-sm-10 col-sm-offset-1">
+            <div id="login-box" class="login-box visible widget-box no-border">
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <h4 class="header blue lighter bigger"><i class="icon-coffee green"></i>Customers</h4>
+                        <div class="space-16"></div>
+                       
+
+
+
+                        <!-- TABLE -->
+                        <div  ng-controller="DashboardController">
+                            <table border="0"  class="table table-striped table-hover"  >
+
+                                <tr>
+                                    <th colspan="9">
+                                    <form id="searchform" class="searchbox">
+
+                                        <span class="block input-icon input-icon-right">
+                                        <input type="text" class="form-control" name = "search" id="search" placeholder="Search..." ng-model="search" />
+                                        </span>
+                                    </form>
+                                    </th> 
+                                </tr>
+                                
+
+                                <tr>
+                                    <th>Name 
+                                        <a href="" ng-click="SortBy('first_name')"><</a>
+                                        <a href="" ng-click="SortBy('-first_name')">></a> 
+                                    </th>
+                                    <th>Last Name</th>
+                                    <th>Telephone</th>
+                                    <th>Email</th>
+                                    <th>Fee</th>
+                                    
+                                    <th>Total Payments</th>
+                                    <th>Total Amount</th>
+                                    
+
+                                    <th>Payments</th>
+                                    <th>Payments Amount</th>
+                                    
+                                   </tr>
+
+
+                                <tr ng-repeat="result in results | orderBy:itemSelected | filter:search">
+                                    <td>{{result.first_name  | uppercase }}</td>
+                                    <td>{{result.last_name}}</td>
+                                    <td>{{result.telephone}}</td>
+                                    <td>{{result.email}}</td>
+                                    <td>{{result.fee | currency:"USD $":0 }}</td>
+
+                                    <td>{{result.total_payments}}</td>
+                                    <td>{{(result.total_payments * result.fee ) | currency:"USD $":0  }}</td>
+
+                                    <td>{{result.payments}}</td>
+                                    <td>{{(result.payments * result.fee ) | currency:"USD $":0  }}</td>
+                                    
+                                </tr>
+
+
+                            </table>    
+
+
+
+
+
+
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.page-content -->
